@@ -1,15 +1,22 @@
 {
-    "name": "iserter/laravel-forms",
-    "description": "Laravel Forms",
-    "type": "library",
-    "require": {
-        "illuminate/support": "^5.5"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Ilyas Serter",
-            "email": "info@ilyasserter.com"
-        }
-    ]
+  "name": "iserter/laravel-forms",
+  "description": "Laravel Forms",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ilyas Serter",
+      "email": "info@ilyasserter.com"
+    }
+  ],
+  "require": {
+    "illuminate/support": "^5.5",
+    "phpunit/phpunit": "^6.3",
+    "illuminate/view": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Laravel\\Forms\\": "src/"
+    }
+  }
 }
