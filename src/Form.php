@@ -16,6 +16,7 @@ namespace Iserter\LaravelForms;
  */
 use Iserter\LaravelForms\Concerns\Attributes;
 use Iserter\LaravelForms\Concerns\RequirableInterface;
+use Iserter\LaravelForms\Concerns\Validation;
 
 /**
  * Class Form
@@ -23,16 +24,12 @@ use Iserter\LaravelForms\Concerns\RequirableInterface;
  */
 class Form
 {
-    use Attributes;
+    use Attributes, Validation;
 
     /**
      * @var array
      */
     protected $elements = [];
-    /**
-     * @var array
-     */
-    protected $rules = [];
 
     /*
     |--------------------------------------------------------------------------
@@ -40,15 +37,6 @@ class Form
     |--------------------------------------------------------------------------
     |
     */
-
-    /**
-     * @return array
-     */
-    public function rules()
-    {
-        return $this->rules;
-    }
-
 
     /**
      * @return array
