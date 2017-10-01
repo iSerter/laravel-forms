@@ -18,5 +18,12 @@
     "psr-4": {
       "Laravel\\Forms\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Laravel\\Forms\\FormsServiceProvider"
+      ]
+    }
   }
 }
