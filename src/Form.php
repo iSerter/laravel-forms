@@ -57,6 +57,9 @@ class Form
     {
         $data = [];
         foreach($this->elements as $e) {
+            if(empty($e->getName())) {
+                continue;
+            }
             $data[$e->getName()] = $e->getValue();
         }
 
