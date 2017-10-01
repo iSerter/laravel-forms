@@ -40,6 +40,11 @@ class Form
         return $this->rules;
     }
 
+    public function data()
+    {
+        return request()->only($this->getFields());
+    }
+
     public function getFields()
     {
         $fields = [];
