@@ -6,12 +6,12 @@
  * Time: 21:01
  */
 
-namespace Laravel\Forms;
+namespace Iserter\LaravelForms;
 
 
 /**
  * Class Facade
- * @package Laravel\Forms
+ * @package Iserter\LaravelForms
  */
 class Facade extends \Illuminate\Support\Facades\Facade
 {

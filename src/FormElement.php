@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Forms;
+namespace Iserter\LaravelForms;
 
-use Laravel\Forms\Concerns\Attributes;
+use Iserter\LaravelForms\Concerns\Attributes;
 
 /**
  * Class Element
  * @author Ilyas Serter <ilyasserter@gmail.com>
- * @package Laravel\Forms\Elements
+ * @package Iserter\LaravelForms\Elements
  */
 abstract class FormElement
 {

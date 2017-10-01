@@ -6,7 +6,7 @@
  * Time: 00:50
  */
 
-namespace Laravel\Forms\Concerns;
+namespace Iserter\LaravelForms\Concerns;
 
 trait Attributes {
 

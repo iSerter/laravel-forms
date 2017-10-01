@@ -6,14 +6,14 @@
  * Time: 01:19
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
-use Laravel\Forms\FormElement;
+use Iserter\LaravelForms\FormElement;
 
 /**
  * Class SelectBox
  * @author Ilyas Serter <info@ilyasserter.com>
- * @package Laravel\Forms\Elements
+ * @package Iserter\LaravelForms\Elements
  */
 class SelectBox extends FormElement
 {

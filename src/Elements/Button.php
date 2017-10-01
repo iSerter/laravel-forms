@@ -6,10 +6,10 @@
  * Time: 22:39
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
 
-use Laravel\Forms\FormElement;
+use Iserter\LaravelForms\FormElement;
 
 class Button extends FormElement
 {

@@ -16,13 +16,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Laravel\\Forms\\": "src/"
+      "Iserter\\LaravelForms\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Laravel\\Forms\\FormsServiceProvider"
+        "Iserter\\LaravelForms\\FormsServiceProvider"
       ]
     }
   }

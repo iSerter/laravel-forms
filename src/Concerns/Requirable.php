@@ -6,11 +6,11 @@
  * Time: 00:20
  */
 
-namespace Laravel\Forms\Concerns;
+namespace Iserter\LaravelForms\Concerns;
 
 /**
  * Class Requirable
- * @package Laravel\Forms\Elements\Concerns
+ * @package Iserter\LaravelForms\Elements\Concerns
  */
 trait Requirable {
 

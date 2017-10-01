@@ -6,10 +6,10 @@
  * Time: 01:29
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
 
-use Laravel\Forms\FormElement;
+use Iserter\LaravelForms\FormElement;
 
 class RadioButton extends FormElement
 {

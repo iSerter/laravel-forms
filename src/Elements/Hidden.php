@@ -6,15 +6,15 @@
  * Time: 01:29
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
 
-use Laravel\Forms\FormElement;
+use Iserter\LaravelForms\FormElement;
 
 /**
  * Class Hidden
  * @author Ilyas Serter <info@ilyasserter.com>
- * @package Laravel\Forms\Elements
+ * @package Iserter\LaravelForms\Elements
  */
 class Hidden extends FormElement
 {

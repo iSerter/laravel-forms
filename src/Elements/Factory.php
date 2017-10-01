@@ -6,13 +6,13 @@
  * Time: 01:02
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
 
 /**
  * Class FormElementFactory
  * @author Ilyas Serter <ilyasserter@gmail.com>
- * @package Laravel\Forms\Elements
+ * @package Iserter\LaravelForms\Elements
  */
 class Factory
 {

@@ -6,16 +6,16 @@
  * Time: 01:28
  */
 
-namespace Laravel\Forms\Elements;
+namespace Iserter\LaravelForms\Elements;
 
-use Laravel\Forms\Concerns\Requirable;
-use Laravel\Forms\Concerns\RequirableInterface;
-use Laravel\Forms\FormElement;
+use Iserter\LaravelForms\Concerns\Requirable;
+use Iserter\LaravelForms\Concerns\RequirableInterface;
+use Iserter\LaravelForms\FormElement;
 
 /**
  * Class TextArea
  * @author Ilyas Serter <info@ilyasserter.com>
- * @package Laravel\Forms\Elements
+ * @package Iserter\LaravelForms\Elements
  */
 class TextArea extends FormElement implements RequirableInterface
 {

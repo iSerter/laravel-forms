@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Forms;
+namespace Iserter\LaravelForms;
 
 
 /**
  * Class Form
  * @author Ilyas Serter <ilyasserter@gmail.com>
- * @package Laravel\Forms
+ * @package Iserter\LaravelForms
  *
  *
  * @method Form addTextInput($name,array $attributes = []) [hello]
@@ -14,12 +14,12 @@ namespace Laravel\Forms;
  * @method Form addSelectBox($name,array $attributes = [])
  *
  */
-use Laravel\Forms\Concerns\Attributes;
-use Laravel\Forms\Concerns\RequirableInterface;
+use Iserter\LaravelForms\Concerns\Attributes;
+use Iserter\LaravelForms\Concerns\RequirableInterface;
 
 /**
  * Class Form
- * @package Laravel\Forms
+ * @package Iserter\LaravelForms
  */
 class Form
 {
