@@ -25,7 +25,13 @@ class Form
 {
     use Attributes;
 
+    /**
+     * @var array
+     */
     protected $elements = [];
+    /**
+     * @var array
+     */
     protected $rules = [];
 
     /*
@@ -35,17 +41,44 @@ class Form
     |
     */
 
+    /**
+     * @return array
+     */
     public function rules()
     {
         return $this->rules;
     }
 
+
+    /**
+     * @return array
+     */
     public function data()
     {
-        return request()->only($this->getFields());
+        $data = [];
+        foreach($this->elements as $e) {
+            $data[$e->getName()] = $e->getValue();
+        }
+
+        return $data;
     }
 
-    public function getFields()
+    /**
+     * @param array $data
+     */
+    public function fill(array $data)
+    {
+        foreach($this->elements as $e) {
+            if(array_key_exists($e->getName(),$data)) {
+                $e->setValue($data[$e->getName()]);
+            }
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function fields()
     {
         $fields = [];
         foreach($this->elements as $e) {
@@ -58,7 +91,10 @@ class Form
     }
 
 
-
+    /**
+     * @param null $element
+     * @return string
+     */
     public function render($element = null)
     {
         if($element !== null) {
@@ -77,6 +113,10 @@ class Form
 
     }
 
+    /**
+     * @param $name
+     * @return string
+     */
     public function renderElement($name)
     {
         $elementContent = [];
@@ -145,6 +185,9 @@ class Form
     |
     */
 
+    /**
+     * @return string
+     */
     function __toString()
     {
         return $this->render();
