@@ -25,7 +25,7 @@ class TextInput extends FormElement implements RequirableInterface
     /**
      * @var string
      */
-    protected $view = 'laravel-forms::textinput';
+    protected $view = 'textinput';
 
 
 

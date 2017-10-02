@@ -26,7 +26,7 @@ class SelectBox extends FormElement
     /**
      * @var string
      */
-    protected $view = 'laravel-forms::selectbox';
+    protected $view = 'selectbox';
 
 
     /**
@@ -48,6 +48,10 @@ class SelectBox extends FormElement
     | 
     */
 
+    /**
+     * alias to getOptions()
+     * @return array
+     */
     public function options()
     {
         return $this->getOptions();

@@ -24,6 +24,6 @@ class TextArea extends FormElement implements RequirableInterface
     /**
      * @var string
      */
-    protected $view = 'laravel-forms::textarea';
+    protected $view = 'textarea';
 
 }

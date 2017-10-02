@@ -13,6 +13,37 @@ namespace Iserter\LaravelForms\Concerns;
  * @package Iserter\LaravelForms\Elements\Concerns
  */
 trait Requirable {
+    /**
+     * @return boolean
+     */
+    public function isIsRequired()
+    {
+        return $this->isRequired;
+    }
+
+    /**
+     * @param boolean $isRequired
+     */
+    public function setIsRequired($isRequired)
+    {
+        $this->isRequired = $isRequired;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * @param mixed $attributes
+     */
+    public function setAttributes($attributes)
+    {
+        $this->attributes = $attributes;
+    }
 
     public $isRequired = false;
     protected $attributes;
@@ -49,7 +80,3 @@ trait Requirable {
     }
 }
 
-interface RequirableInterface {
-    public function isRequired();
-    public function setRequired();
-}

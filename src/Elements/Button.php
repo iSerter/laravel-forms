@@ -13,7 +13,7 @@ use Iserter\LaravelForms\FormElement;
 
 class Button extends FormElement
 {
-    protected $view = 'laravel-forms::button';
+    protected $view = 'button';
     protected $type;
 
     public function __construct($label,$type = null)
@@ -26,13 +26,17 @@ class Button extends FormElement
         return $this->type !== null;
     }
 
+    /**
+     * alias to getType()
+     * @return
+     */
     public function type()
     {
         return $this->getType();
     }
 
     /**
-     * @return null
+     * @return
      */
     public function getType()
     {
@@ -40,7 +44,7 @@ class Button extends FormElement
     }
 
     /**
-     * @param null $type
+     * @param $type
      */
     public function setType($type)
     {

@@ -18,6 +18,6 @@ use Iserter\LaravelForms\FormElement;
  */
 class CheckBox extends FormElement
 {
-    protected $view = 'laravel-forms::checkbox';
+    protected $view = 'checkbox';
 
 }

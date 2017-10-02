@@ -26,10 +26,13 @@ class Form
 {
     use Attributes, Validation;
 
+    protected $theme = 'default';
+
     /**
      * @var array
      */
     protected $elements = [];
+
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +95,11 @@ class Form
             return $this->renderElement($element);
         }
 
+        /**
+         * @var $e FormElement
+         */
         foreach ($this->elements as $e) {
+            $e->setTheme($this->getTheme());
             if($e instanceof RequirableInterface) {
                 if(array_key_exists($e->name(),$this->rules) && str_contains($this->rules[$e->name()],'required')) {
                     $e->setRequired();
@@ -100,7 +107,7 @@ class Form
             }
         }
 
-        return view('laravel-forms::form',['form' => $this])->render();
+        return view('laravel-forms::'.$this->theme.'.form',['form' => $this])->render();
 
     }
 
@@ -116,6 +123,7 @@ class Form
          */
         foreach($this->elements as $e) {
             if($e->getName() == $name) {
+                $e->setTheme($this->getTheme());
                 $elementContent[] = $e->render();
             }
         }
@@ -167,6 +175,22 @@ class Form
             $this->elements[] = $element;
         }
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
+
+    /**
+     * @param string $theme
+     */
+    public function setTheme($theme)
+    {
+        $this->theme = $theme;
     }
 
     /*

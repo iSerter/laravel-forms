@@ -21,5 +21,5 @@ class Hidden extends FormElement
     /**
      * @var string
      */
-    protected $view = 'laravel-forms::hidden';
+    protected $view = 'hidden';
 }

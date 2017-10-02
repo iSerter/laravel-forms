@@ -13,6 +13,6 @@ use Iserter\LaravelForms\FormElement;
 
 class RadioButton extends FormElement
 {
-    protected $view = 'laravel-forms::radiobutton';
+    protected $view = 'radiobutton';
 
 }

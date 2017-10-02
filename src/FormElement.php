@@ -17,28 +17,38 @@ abstract class FormElement
     protected $value;
     protected $default = '';
     protected $label = '';
+    protected $theme = 'default';
     protected $view;
 
-    public function __construct($label = null,$name = null, array $attributes = [])
+    public function __construct($label = null, $name = null, array $attributes = [])
     {
         $this->label = $label;
         $this->name = $name;
 
-        if(isset($attributes['value'])) {
+        if (isset($attributes['value'])) {
             $this->setValue($attributes['value']);
             unset($attributes['value']);
         }
 
-        foreach($attributes as $name => $value) {
-            $this->addAttribute($name,$value);
+        foreach ($attributes as $name => $value) {
+            $this->addAttribute($name, $value);
         }
     }
 
+    /**
+     * @return mixed
+     */
     function render()
     {
-        return view($this->view,['e' => $this])->render();
+        return view('laravel-forms::'.$this->theme.'.' . $this->view, ['e' => $this])->render();
     }
 
+    /*
+    |--------------------------------------------------------------------------
+    | Getters & Setters
+    |--------------------------------------------------------------------------
+    |
+    */
 
     /**
      * alias
@@ -131,6 +141,49 @@ abstract class FormElement
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getTheme()
+    {
+        return $this->theme;
+    }
+
+    /**
+     * @param mixed $theme
+     */
+    public function setTheme($theme)
+    {
+        $this->theme = $theme;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+
+    /**
+     * @param mixed $view
+     */
+    public function setView($view)
+    {
+        $this->view = $view;
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Magic Methods
+    |--------------------------------------------------------------------------
+    |
+    */
+
+    /**
+     * @return mixed
+     */
     function __toString()
     {
         return $this->render();

@@ -20,6 +20,8 @@ trait Validation
      */
     protected $rules = [];
 
+    protected $messages = [];
+
     /**
      * @return array
      */
@@ -76,6 +78,22 @@ trait Validation
     public function setRules($rules)
     {
         $this->rules = $rules;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * @param array $messages
+     */
+    public function setMessages($messages)
+    {
+        $this->messages = $messages;
     }
 
 }
