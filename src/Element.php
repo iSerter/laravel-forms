@@ -21,7 +21,12 @@ abstract class Element
         if(empty($view)) {
             return '';
         }
-        return view('laravel-forms::'.$this->theme.'.' . $this->view, ['e' => $this])->render();
+
+        if(view()->exists('laravel-forms::'.$this->theme.'.' . $this->view)) {
+            return view('laravel-forms::'.$this->theme.'.' . $this->view, ['e' => $this])->render();
+        }
+
+        return view('laravel-forms::default.' . $this->view, ['e' => $this])->render();
     }
 
     /*

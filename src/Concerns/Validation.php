@@ -31,22 +31,16 @@ trait Validation
     }
 
     /**
-     * Validate the given request with the given rules.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  array $messages
-     * @param  array $customAttributes
+     * @param array $customAttributes
      * @return array
-     * @internal param array $rules
      */
-    public function validate(Request $request,
-                             array $messages = [], array $customAttributes = [])
+    public function validate( array $customAttributes = [])
     {
         app(Factory::class)
-            ->make($request->all(), $this->rules(), $messages, $customAttributes)
+            ->make(request()->all(), $this->rules, $this->messages, $customAttributes)
             ->validate();
 
-        return $this->extractInputFromRules($request, $this->rules());
+        return $this->extractInputFromRules(request(), $this->rules());
     }
 
     /**

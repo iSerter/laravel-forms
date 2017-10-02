@@ -11,11 +11,10 @@ use Iserter\LaravelForms\Concerns\HasAttributes;
  */
 abstract class FormElement extends Element
 {
-
     protected $name;
     protected $value;
-    protected $default = '';
-    protected $label = '';
+    protected $default;
+    protected $label;
     protected $theme = 'bootstrap4';
     protected $formAttributes = ['required','disabled','readonly','checked'];
 
