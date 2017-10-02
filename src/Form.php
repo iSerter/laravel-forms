@@ -14,7 +14,8 @@ namespace Iserter\LaravelForms;
  * @method Form addSelectBox($name,array $attributes = [])
  *
  */
-use Iserter\LaravelForms\Concerns\Attributes;
+use Iserter\LaravelForms\Concerns\HasAttributes;
+use Iserter\LaravelForms\Concerns\HasElements;
 use Iserter\LaravelForms\Concerns\RequirableInterface;
 use Iserter\LaravelForms\Concerns\Validation;
 
@@ -22,16 +23,11 @@ use Iserter\LaravelForms\Concerns\Validation;
  * Class Form
  * @package Iserter\LaravelForms
  */
-class Form
+class Form extends Element
 {
-    use Attributes, Validation;
+    use HasElements, Validation;
 
-    protected $theme = 'default';
-
-    /**
-     * @var array
-     */
-    protected $elements = [];
+    protected $theme = 'bootstrap4';
 
 
     /*
@@ -139,59 +135,6 @@ class Form
     |
     */
 
-    /**
-     * @return array
-     */
-    public function getElements()
-    {
-        return $this->elements;
-    }
-
-    /**
-     * @param array $elements
-     */
-    public function setElements($elements)
-    {
-        $this->elements = $elements;
-    }
-
-    /**
-     * @param FormElement $element
-     * @return $this
-     */
-    public function addElement(FormElement $element)
-    {
-        $this->elements[] = $element;
-        return $this;
-    }
-
-    /**
-     * @param FormElement[] $elements
-     * @return $this
-     */
-    public function addElements(FormElement ...$elements)
-    {
-        foreach($elements as $element) {
-            $this->elements[] = $element;
-        }
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTheme()
-    {
-        return $this->theme;
-    }
-
-    /**
-     * @param string $theme
-     */
-    public function setTheme($theme)
-    {
-        $this->theme = $theme;
-    }
 
     /*
     |--------------------------------------------------------------------------
@@ -200,13 +143,6 @@ class Form
     |
     */
 
-    /**
-     * @return string
-     */
-    function __toString()
-    {
-        return $this->render();
-    }
 
     /**
      * @param $name

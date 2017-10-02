@@ -2,23 +2,23 @@
 
 namespace Iserter\LaravelForms;
 
-use Iserter\LaravelForms\Concerns\Attributes;
+use Iserter\LaravelForms\Concerns\HasAttributes;
 
 /**
  * Class Element
  * @author Ilyas Serter <ilyasserter@gmail.com>
  * @package Iserter\LaravelForms\Elements
  */
-abstract class FormElement
+abstract class FormElement extends Element
 {
-    use Attributes;
 
     protected $name;
     protected $value;
     protected $default = '';
     protected $label = '';
-    protected $theme = 'default';
-    protected $view;
+    protected $theme = 'bootstrap4';
+    protected $formAttributes = ['required','disabled','readonly','checked'];
+
 
     public function __construct($label = null, $name = null, array $attributes = [])
     {
@@ -36,11 +36,21 @@ abstract class FormElement
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    function render()
+    public function attributes()
     {
-        return view('laravel-forms::'.$this->theme.'.' . $this->view, ['e' => $this])->render();
+        $attributes = '';
+        $formAttributes = '';
+        foreach($this->attributes as $k => $v) {
+            if(in_array($k,$this->formAttributes) && $v) {
+                $formAttributes .= ' ' . $formAttributes;
+                continue;
+            }
+            $attributes .= ' ' . $k . '="' . htmlspecialchars($v,ENT_HTML5) . '"';
+        }
+
+        return $attributes . $formAttributes;
     }
 
     /*
@@ -141,53 +151,7 @@ abstract class FormElement
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTheme()
-    {
-        return $this->theme;
-    }
 
-    /**
-     * @param mixed $theme
-     */
-    public function setTheme($theme)
-    {
-        $this->theme = $theme;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getView()
-    {
-        return $this->view;
-    }
-
-    /**
-     * @param mixed $view
-     */
-    public function setView($view)
-    {
-        $this->view = $view;
-    }
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Magic Methods
-    |--------------------------------------------------------------------------
-    |
-    */
-
-    /**
-     * @return mixed
-     */
-    function __toString()
-    {
-        return $this->render();
-    }
 
 
 
