@@ -1,0 +1,1 @@
+<{{$e->tag().$e->attributes()}}>{{$e->value()}}</$e->tag()>
