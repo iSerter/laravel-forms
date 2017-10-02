@@ -103,7 +103,11 @@ class Form extends Element
             }
         }
 
-        return view('laravel-forms::'.$this->theme.'.form',['form' => $this])->render();
+        if(view()->exists('laravel-forms::'.$this->theme.'.form')) {
+            return view('laravel-forms::'.$this->theme.'.form',['form' => $this])->render();
+        }
+
+        return view('laravel-forms::default.form',['form' => $this])->render();
 
     }
 

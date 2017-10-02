@@ -28,6 +28,12 @@ class Text extends Element
     protected $tag;
 
     /**
+     * @var string
+     */
+    protected $view = 'text';
+
+
+    /**
      * Text constructor.
      * @param $text
      * @param string $tag

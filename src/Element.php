@@ -18,7 +18,7 @@ abstract class Element
      */
     function render()
     {
-        if(empty($view)) {
+        if(empty($this->view)) {
             return '';
         }
 

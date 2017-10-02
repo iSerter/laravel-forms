@@ -11,10 +11,26 @@ namespace Iserter\LaravelForms\Elements;
 
 use Iserter\LaravelForms\Element;
 
+/**
+ * Class PlainText
+ * @package Iserter\LaravelForms\Elements
+ */
 class PlainText extends Element
 {
+    /**
+     * @var
+     */
     protected $text;
 
+    /**
+     * @var
+     */
+    protected $view;
+
+    /**
+     * PlainText constructor.
+     * @param $text
+     */
     public function __construct($text)
     {
         $this->text = $text;
@@ -36,6 +52,9 @@ class PlainText extends Element
         $this->text = $text;
     }
 
+    /**
+     * @return mixed
+     */
     public function render()
     {
         return $this->text;
